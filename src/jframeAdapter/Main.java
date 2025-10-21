@@ -6,7 +6,9 @@ import javax.swing.JTable;
 
 import adapter2.Covid19PacientTableModelAdapter;
 import domain.Covid19Pacient;
+import domain.Medicament;
 import domain.Symptom;
+import factory.MedicalGUI;
 
 	public class Main {
 
@@ -30,6 +32,10 @@ import domain.Symptom;
 		     j.pack();
 		     j.setVisible(true);
 
+/**	 MIRAR SI DEBO AÑADIR ESTO O NO 
+ 			Medicament m = new Medicament("Ibuprofeno");
+		    MedicalGUI mgui = new MedicalGUI(m);
+		    */
 		}
 
 	}

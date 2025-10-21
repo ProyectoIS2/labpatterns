@@ -122,8 +122,8 @@ public class PacientSymptomGUI extends JFrame {
 			} else errorLabel.setText("ERROR, Weight between [1..3]");
 		  } 
 		  else errorLabel.setText("ERROR, Symptom "+symptomName+" already assigned ");
-		} else errorLabel.setText("ERROR, weight must be an integer");
-		  
+		} 
+		else errorLabel.setText("ERROR, weight must be an integer");  
 	}
 	
 	public void removeSymptom(String symptomName) {
