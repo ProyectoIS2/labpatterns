@@ -1,6 +1,6 @@
 package domain;
 
-public class Symptom {
+public class Symptom{
 	private String name;
 	private int covidImpact;
 	private int severityIndex;
