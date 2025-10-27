@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import domain.Covid19Pacient;
 import domain.Symptom;
 
 import javax.swing.JLabel;
@@ -79,8 +78,26 @@ public class PacientSymptomGUI extends JFrame {
 				if (new Integer(weightField.getText())<=3) {
 		    	System.out.println("Symptom added :"+(Symptom)symptomComboBox.getSelectedItem());
 
-				//addSymptomByName ...
-				
+		    	btnNewButton.addActionListener(new ActionListener() {
+		    	    public void actionPerformed(ActionEvent e) {
+		    	        errorLabel.setText(" ");
+		    	        try {
+		    	            int weight = Integer.parseInt(weightField.getText());
+		    	            if (weight >= 1 && weight <= 3) {
+		    	                Symptom selected = (Symptom) symptomComboBox.getSelectedItem();
+		    	                if (selected != null) {
+		    	                    p.addSymptomByName(selected.getName(), weight);
+		    	                    System.out.println("Symptom added: " + selected);
+		    	                }
+		    	            } else {
+		    	                errorLabel.setText("ERROR, Weight must be between [1..3]");
+		    	            }
+		    	        } catch (NumberFormatException ex) {
+		    	            errorLabel.setText("ERROR, Weight must be a number");
+		    	        }
+		    	    }
+		    	});
+
 			} else errorLabel.setText("ERROR, Weight between [1..3]");
 				
 			}
@@ -95,8 +112,17 @@ public class PacientSymptomGUI extends JFrame {
 
 		    	System.out.println("Symptom removed :"+(Symptom)symptomComboBox.getSelectedItem());
 
-				//removeSymptomByName...
-				
+		    	btnRemoveSymptom.addActionListener(new ActionListener() {
+		    	    public void actionPerformed(ActionEvent e) {
+		    	        errorLabel.setText(" ");
+		    	        Symptom selected = (Symptom) symptomComboBox.getSelectedItem();
+		    	        if (selected != null) {
+		    	            p.removeSymptomByName(selected.getName());
+		    	            System.out.println("Symptom removed: " + selected);
+		    	        }
+		    	    }
+		    	});
+
 			} 
 		});
 		btnRemoveSymptom.setBounds(255, 202, 147, 29);
