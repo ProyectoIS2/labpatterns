@@ -17,5 +17,6 @@ public class Main {
         Covid19Pacient pacient2 = new Covid19Pacient("Maddi", 28, factory);
         new PacientObserverGUI(pacient2);   // GUI que observa al paciente 2
         new PacientSymptomGUI(pacient2);    // GUI para modificar síntomas del paciente 2
+        
     }
 }
