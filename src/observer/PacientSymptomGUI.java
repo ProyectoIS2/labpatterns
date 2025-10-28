@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import domain.Symptom;
-import domain.Covid19Pacient;
 
 public class PacientSymptomGUI extends JFrame {
     private JPanel contentPane;
