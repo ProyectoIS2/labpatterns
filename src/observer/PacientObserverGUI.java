@@ -37,21 +37,21 @@ public class PacientObserverGUI extends JFrame implements Observer{
 		this();
 		obs.addObserver(this);
 	}
-	 @Override
-	 public void update(Observable o, Object arg) {
-		 Covid19Pacient p = (Covid19Pacient) o;
-		 String s = "<html> Pacient: <b>" + p.getName() + "</b> <br>";
-	     s += "Covid impact: <b>" + p.covidImpact() + "</b><br><br>";
-	     s += " _____________________ <br> Symptoms: <br>";
-
-	     Iterator<Symptom> i = p.getSymptoms().iterator();
-	     while (i.hasNext()) {
-	    	 Symptom sym = i.next();
-	         s += " - " + sym.toString() + ", " + p.getWeight(sym) + "<br>";
-	     }
-	       s += "</html>";
-
-	       symptomLabel.setText(s);
-	    }
+	@Override
+	public void update(Observable o, Object arg) {
+		Covid19Pacient p = (Covid19Pacient) o;
+		String s = "<html> Pacient: <b>" + p.getName() + "</b> <br>";
+		s += "Covid impact: <b>" + p.covidImpact() + "</b><br><br>";
+		s += " _____________________ <br> Symptoms: <br>";
+		
+		Iterator<Symptom> i = p.getSymptoms().iterator();
+		while (i.hasNext()) {
+			Symptom sym = i.next();
+			s += " - " + sym.toString() + ", " + p.getWeight(sym) + "<br>";
+		}
+		s += "</html>";
+		
+		symptomLabel.setText(s);
+	}
 
 }
