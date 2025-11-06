@@ -12,14 +12,14 @@ import domain.ISymptonFactory;
 import domain.Symptom;
 
  
-public class Covid19Pacient extends Observable{
+public class Covid19PacientObserver extends Observable{
 	private String  name; 
 	private int age;
 	private Map<Symptom,Integer> symptoms=new HashMap<Symptom,Integer>();
 	private ISymptonFactory factory;
 
 
-	public Covid19Pacient(String name, int years, ISymptonFactory factory) {
+	public Covid19PacientObserver(String name, int years, ISymptonFactory factory) {
 		this.name = name;
 		this.age = years;
 		this.factory=factory; 

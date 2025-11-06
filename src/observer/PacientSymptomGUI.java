@@ -16,7 +16,7 @@ public class PacientSymptomGUI extends JFrame {
     private JLabel lblPacient;
     private JLabel labelPacient;
 
-    public PacientSymptomGUI(Covid19Pacient p) {
+    public PacientSymptomGUI(Covid19PacientObserver p) {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(200, 100, 450, 300);
         contentPane = new JPanel();

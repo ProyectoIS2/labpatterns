@@ -39,7 +39,7 @@ public class PacientObserverGUI extends JFrame implements Observer{
 	}
 	@Override
 	public void update(Observable o, Object arg) {
-		Covid19Pacient p = (Covid19Pacient) o;
+		Covid19PacientObserver p = (Covid19PacientObserver) o;
 		String s = "<html> Pacient: <b>" + p.getName() + "</b> <br>";
 		s += "Covid impact: <b>" + p.covidImpact() + "</b><br><br>";
 		s += " _____________________ <br> Symptoms: <br>";

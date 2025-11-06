@@ -34,7 +34,7 @@ public class PacientThermometerGUI extends Frame implements Observer{
 	@Override
 	public void update(Observable o, Object	arg){
 		// Esta es la lógica que se ejecutará automáticamente
-		Covid19Pacient	p=(Covid19Pacient) o;
+		Covid19PacientObserver	p=(Covid19PacientObserver) o;
 		int farenheit =	(int)	
 		p.covidImpact();
 		gauges.set(farenheit);
