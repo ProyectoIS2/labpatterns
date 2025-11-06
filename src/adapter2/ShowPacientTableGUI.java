@@ -21,6 +21,8 @@ public class ShowPacientTableGUI extends JFrame{
 	  	this.pacient=pacient;
 	  	
 	  	setFonts();
+	  	this.setSize(600, 400);
+
 	    
 	  	TableModel tm=new Covid19PacientTableModelAdapter(pacient);
 		table = new JTable(tm);
