@@ -11,7 +11,7 @@ public class SeverityIndexComparator implements Comparator<Object>{
 		Symptom s1 = (Symptom) o1;
 		Symptom s2 = (Symptom) o2;
 		
-		return compare(s1.getSeverityIndex(),s2.getSeverityIndex());
+		return Double.compare(s1.getSeverityIndex(),s2.getSeverityIndex());
 	}
 
 }

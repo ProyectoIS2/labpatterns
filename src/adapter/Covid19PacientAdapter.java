@@ -1,28 +1,37 @@
 package adapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import domain.Covid19Pacient;
+import domain.Symptom;
 
 public class Covid19PacientAdapter implements InvertedIterator{
-
+	
+	List<Symptom> symptoms;
+	int position;
+	
 	public Covid19PacientAdapter(Covid19Pacient p) {
-		// TODO Auto-generated constructor stub
+		this.symptoms = new ArrayList<>(p.getSymptoms());	
+		
+		goLast();
 	}
 
 	@Override
 	public Object previous() {
-		// TODO Auto-generated method stub
-		return null;
+		Symptom s = symptoms.get(position);
+		position --;
+		return s;
 	}
 
 	@Override
 	public boolean hasPrevious() {
-		// TODO Auto-generated method stub
-		return false;
+		return position>=0;
 	}
 
 	@Override
 	public void goLast() {
-		// TODO Auto-generated method stub
+		position = symptoms.size()-1;
 		
 	}
 
